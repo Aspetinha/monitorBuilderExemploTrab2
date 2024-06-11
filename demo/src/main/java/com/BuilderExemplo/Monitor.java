@@ -7,7 +7,7 @@ public class Monitor {
     private String refreshRate;
     private String inputs;
    
-   
+    // getter / setters
     public String getScreen() {
         return screen;
     }
@@ -33,13 +33,16 @@ public class Monitor {
         this.inputs = inputs;
     }
 
+    public Monitor(monitorBuilder builder) {
+        this.screen = builder.getScreen();
+        this.resolution = builder.getResolution();
+        this.refreshRate = builder.getRefreshRate();
+        this.inputs = builder.getInputs();
+    }
 
-    Monitor(Builder builder){
-
-        this.screen = builder.screen;
-        this.resolution = builder.resolution; 
-        this.refreshRate = builder.refreshRate;
-        this.inputs = builder.inputs;
+    @Override
+    public String toString() {
+        return "Monitor [Screen=" + screen + ", Resolution=" + resolution + ", Refresh Rate=" + refreshRate + ", Inputs=" + inputs + "]";
     }
 
     
